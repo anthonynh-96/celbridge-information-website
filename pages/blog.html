@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Celbridge Blog — Protected</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body class="page page--blog">
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav__brand" href="../index.html">Celbridge</a>
+      <div class="nav__right">
+        <span id="who"></span>
+        <button class="btn btn--secondary" id="logout">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="newPost" hidden>
+      <h2>New post</h2>
+      <form id="createForm" class="form">
+        <div class="form__row">
+          <label>Title</label>
+          <input class="input" name="title" required>
+        </div>
+        <div class="form__row">
+          <label>Body</label>
+          <textarea class="input" name="body" rows="6" required></textarea>
+        </div>
+        <button class="btn btn--primary">Publish</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Recent posts</h2>
+      <div id="list" class="grid"></div>
+    </section>
+  </main>
+
+  <script type="module">
+    async function api(path, opts = {}) {
+      const res = await fetch(path, {
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json', ...(opts.headers || {}) },
+        ...opts
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || 'Request failed');
+      return data;
+    }
+
+    const who = document.getElementById('who');
+    const list = document.getElementById('list');
+    const newPost = document.getElementById('newPost');
+    const form = document.getElementById('createForm');
+    const logoutBtn = document.getElementById('logout');
+
+    async function me() {
+      const res = await api('../api/auth/me', { method: 'GET' });
+      return res.user;
+    }
+
+    async function renderPosts() {
+      const posts = await api('/api/posts', { method: 'GET' });
+      list.innerHTML = posts.map(p => `
+        <article class="card post" data-id="${p.id}">
+          <h3>${escapeHTML(p.title)}</h3>
+          <small>${new Date(p.createdAt).toLocaleString()}</small>
+          <p>${escapeHTML(p.body).replace(/\n/g,'<br>')}</p>
+          <div>
+            <button class="btn btn--secondary edit">Edit</button>
+            <button class="btn btn--danger del">Delete</button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const payload = Object.fromEntries(new FormData(form).entries());
+      try {
+        await api('../api/posts', { method:'POST', body: JSON.stringify(payload) });
+        form.reset();
+        await renderPosts();
+      } catch (err) {
+        alert(err.message);
+      }
+    });
+
+    list.addEventListener('click', async (e) => {
+      const card = e.target.closest('.post'); if (!card) return;
+      const id = card.dataset.id;
+
+      if (e.target.classList.contains('del')) {
+        if (!confirm('Delete this post?')) return;
+        await api(`../api/posts/${id}`, { method:'DELETE' });
+        card.remove();
+      }
+
+      if (e.target.classList.contains('edit')) {
+        const title = prompt('New title:', card.querySelector('h3').textContent);
+        if (title == null) return;
+        const body = prompt('New body:', card.querySelector('p').textContent);
+        if (body == null) return;
+        await api(`/api/posts/${id}`, { method:'PUT', body: JSON.stringify({ title, body }) });
+        await renderPosts();
+      }
+    });
+
+    logoutBtn.addEventListener('click', async () => {
+      await api('../api/auth/logout', { method: 'POST' });
+      location.href = '../pages/login.html';
+    });
+
+    function escapeHTML(s=''){ return s.replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])); }
+
+    (async () => {
+      const user = await me();
+      if (!user) { location.href = '../pages/login.html'; return; }
+      who.textContent = `Signed in as ${user.displayName}`;
+      newPost.hidden = false;
+      await renderPosts();
+    })();
+  </script>
+</body>
+</html>

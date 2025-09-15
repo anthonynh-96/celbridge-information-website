@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Celbridge Main Street | Celbridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+    <!-- Page-local touches only -->
+    <style>
+      /* Scroll progress */
+      #scrollProgress{position:fixed;top:0;left:0;height:4px;width:0;background:#47D3E5;z-index:9999;transition:width .1s linear;}
+      /* Cards */
+      .facts-grid .card{border:1px solid rgba(0,0,0,.12);border-radius:8px;padding:1.25rem}
+      .facts-grid .stat{font-size:2rem;font-weight:300}
+      /* Timeline */
+      .timeline details{border-left:4px solid rgba(0,0,0,.2);padding:.75rem 1rem;margin-bottom:1rem}
+      .timeline summary{cursor:pointer;font-weight:300;font-size:1.15rem}
+      .timeline details[open]{background:rgba(0,0,0,.03)}
+      /* Chips */
+      .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+      .chip{border:1px solid rgba(0,0,0,.2);border-radius:999px;padding:.35rem .9rem;cursor:pointer;user-select:none;font-size:.95rem}
+      .chip.active{background:#47D3E5;color:#fff;border-color:#47D3E5}
+      .is-hidden{display:none!important}
+      /* On-scroll helpers */
+      .onscroll-fade-in,.onscroll-image-fade-in{opacity:0;transform:translateY(.5rem);transition:opacity .6s ease,transform .6s ease}
+      .onscroll-fade-in.is-active,.onscroll-image-fade-in.is-active{opacity:1;transform:none}
+      /* Audio player */
+      .audio-card{border:1px dashed rgba(0,0,0,.2);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:.75rem}
+      .audio-btn{border:0;border-radius:999px;padding:.6rem 1.1rem;cursor:pointer}
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="scrollProgress"></div>
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="divided">
+      <!-- Hero -->
+      <section class="banner style1 orient-right content-align-left image-position-left fullscreen onload-image-fade-in onload-content-fade-right">
+        <div class="content">
+          <h1>Celbridge Main Street</h1>
+          <p class="major">
+            The spine of the town: shopfronts and stone, mills and markets, stories and footsteps.
+            From Georgian facades to everyday bustle, Main Street is where Celbridge’s past and present meet.
+          </p>
+          <ul class="actions stacked">
+            <li><a href="#facts" class="button big wide smooth-scroll-middle">Quick facts</a></li>
+            <li><a href="../pages/home.html" class="button">← Back to Home</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="../images/ms_circa1800.jpg" alt="Celbridge Main Street, daytime streetscape" />
+        </div>
+      </section>
+
+      <!-- Quick Facts -->
+      <section id="facts" class="wrapper style1 align-center">
+        <div class="inner">
+          <h2>Main Street at a glance</h2>
+          <p class="major">A fast snapshot (watch the numbers tick up).</p>
+
+          <div class="row facts-grid gtr-50 aln-center onscroll-fade-in">
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="card">
+                <h3><span class="stat count-up" data-target="18">0</span>th–<span class="stat count-up" data-target="21">0</span>st</h3>
+                <p><strong>Centuries</strong> of streetscape layers</p>
+              </div>
+            </div>
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="card">
+                <h3 class="stat count-up" data-target="1">0</h3>
+                <p><strong>Main thoroughfare</strong> linking town & river</p>
+              </div>
+            </div>
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="card">
+                <h3 class="stat count-up" data-target="50">0</h3>
+                <p><strong>Shopfronts+</strong> and local businesses</p>
+              </div>
+            </div>
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="card">
+                <h3 class="stat">Heritage</h3>
+                <p><strong>Georgian & Victorian</strong> character</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story / Timeline -->
+      <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+        <div class="content">
+          <h2>How Main Street took shape</h2>
+          <p>Open the milestones to skim the street’s evolution.</p>
+
+          <div class="timeline">
+            <details>
+              <summary><strong>18th century</strong> — A planned streetscape emerges</summary>
+              <p>With estates thriving nearby, new buildings and shopfronts line the route through the town, giving Main Street its enduring rhythm.</p>
+            </details>
+            <details>
+              <summary><strong>19th century</strong> — Trade & services grow</summary>
+              <p>Post office, inns, grocers, and mills feed a busier marketplace. Stone and brick façades gain decorative detail.</p>
+            </details>
+            <details>
+              <summary><strong>20th century</strong> — Modern life</summary>
+              <p>Transport, new retail, and utilities reshape the street while key heritage buildings remain anchor points.</p>
+            </details>
+            <details>
+              <summary><strong>Today</strong> — Living heritage</summary>
+              <p>Independent businesses and daily footfall keep the street active — a lived-in timeline of Celbridge.</p>
+            </details>
+          </div>
+
+          <ul class="actions stacked">
+            <li><a href="#gallery" class="button smooth-scroll-middle">Explore the street</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="../images/Main street/main-street1.jpg" alt="Shopfront facades along Celbridge Main Street" />
+        </div>
+      </section>
+
+      <!-- Explorer (filterable gallery) -->
+					<section class="wrapper style1 align-center">
+						<div class="inner" div id="gallery">
+							<h2>Main Street Explorer</h2>
+          <p class="major">Filter by what you want to see — landmarks, shopfronts, streetscapes, or evening vibes.</p>
+						</div>
+
+						<!-- Gallery: Celbridge Main Street -->
+<div class="gallery style2 medium lightbox onscroll-fade-in">
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/01.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/01.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>Celbridge Main Street, c.1870</h3>
+            <p>A flock of sheep being herded through the village, showing its agrarian roots.</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/02.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/02.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>The Abbey, Celbridge</h3>
+            <p>A striking castellated residence overlooking the River Liffey, once home to Jonathan Swift’s friend, Vanessa (Esther Vanhomrigh).</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/03.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/03.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>Tea Lane Graveyard</h3>
+            <p>Historic medieval graveyard with a fortified chapel tower, final resting place of William ‘Speaker’ Conolly.</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/04.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/04.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>Gogarty’s Building</h3>
+            <p>A long-standing premises on Main Street, remembered by many locals for its bold colours and shopfront.</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/05.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/05.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>Modern Main Street</h3>
+            <p>Today’s Celbridge Main Street blends heritage shopfronts with busy cafés and businesses.</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/06.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/06.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>Upper Main Street</h3>
+            <p>Stone and brick façades with floral displays highlight the town’s village charm.</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/07.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/07.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>Historic Main Street, late 1800s</h3>
+            <p>A wide, quiet road lined with stone houses, giving a glimpse into Celbridge’s past character.</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/08.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/08.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>Bridge House & Choy’s</h3>
+            <p>Distinctive corner building at the bottom of Main Street, beside the Liffey bridge. The neighbouring Choy’s premises was once briefly used as an RIC barracks in the early 20th century.</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/09.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/09.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>The Mill, Celbridge</h3>
+            <p>Once a major source of industry along the River Liffey, the mill remains an iconic landmark of the town’s working past and is now a local commmunity centre.</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <a href="../images/gallery/fulls/Mains-street-gallery/10.jpg" class="image">
+            <img src="../images/gallery/thumbs/Mains-street-thumbs/10.jpg" alt="" />
+        </a>
+        <div class="caption">
+            <h3>Celbridge Main Street, early 1900s</h3>
+            <p>Horse-drawn carts and Breens Hotel capture a bustling but rural streetscape.</p>
+            <ul class="actions fixed">
+                <li><span class="button small">Open</span></li>
+            </ul>
+        </div>
+    </article>
+
+					</section>
+
+      <!-- Sound of the Street -->
+      <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+        <div class="content">
+          <h2>Listen: Main Street soundscape</h2>
+          <p>Close your eyes for a few seconds: footsteps, chatter, bicycle bells, a door latch — a living street in motion.</p>
+          <div class="audio-card">
+            <button class="audio-btn button" id="audioToggle">Play</button>
+            <span id="audioStatus" aria-live="polite">Paused</span>
+          </div>
+          <audio id="streetAudio" preload="none">
+            <source src="audio/mainstreet.mp3" type="audio/mpeg" />
+          </audio>
+
+          <ul class="actions stacked" style="margin-top:1rem;">
+            <li><a href="#wrapper" class="button smooth-scroll-middle">Back to top</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="../images/mainstreet/details.jpg" alt="Detail of stone and signage on Main Street" />
+        </div>
+      </section>
+
+      <!-- Footer-ish -->
+      <section class="wrapper style1 align-center">
+        <div class="inner">
+          <p>&copy; Celbridge information site <a href="#">Anthony Norton Holohan</a>.</p>
+          <ul class="actions stacked">
+            <li><a href="../pages/william-conolly.html" class="button">William Conolly</a></li>
+            <li><a href="../pages/castletown.html" class="button">Castletown House & Parklands</a></li>
+            <li><a href="../pages/home.html" class="button">Home</a></li>
+            <li><a href="#wrapper" class="button smooth-scroll-middle">Back to top</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- JS (same pattern as Castletown page: smooth scroll, progress, onscroll reveal, counters, chips) -->
+    <script>
+      // Remove preload
+      window.addEventListener('load', () => {
+        setTimeout(() => document.body.classList.remove('is-preload'), 100);
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a.smooth-scroll-middle').forEach(a => {
+        a.addEventListener('click', e => {
+          const href = a.getAttribute('href'); if (!href || !href.startsWith('#')) return;
+          e.preventDefault(); const el = document.querySelector(href);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      });
+
+      // Scroll progress
+      const progressBar = document.getElementById('scrollProgress');
+      const updateProgress = () => {
+        const h = document.documentElement;
+        const pct = ((h.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100;
+        progressBar.style.width = pct + '%';
+      };
+      document.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      // On-scroll reveal
+      const revealTargets = document.querySelectorAll('.onscroll-fade-in, .onscroll-image-fade-in');
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-active'); });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+      revealTargets.forEach(el => io.observe(el));
+
+      // Count-up stats
+      const counters = document.querySelectorAll('.count-up');
+      const animateCount = el => {
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const start = 0, duration = 1200; const t0 = performance.now();
+        const step = t => { const p = Math.min((t - t0) / duration, 1);
+          el.textContent = Math.floor(start + p * (target - start));
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      const co = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); co.unobserve(e.target); } });
+      }, { threshold: 0.8 });
+      counters.forEach(c => co.observe(c));
+
+      // Filterable gallery chips
+      const chips = document.querySelectorAll('.chip');
+      const items = document.querySelectorAll('#streetGallery article');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const filter = chip.getAttribute('data-filter');
+          items.forEach(it => {
+            if (filter === '*' || it.getAttribute('data-tags').includes(filter)) it.classList.remove('is-hidden');
+            else it.classList.add('is-hidden');
+          });
+        });
+      });
+
+      // Simple audio toggle
+      const audio = document.getElementById('streetAudio');
+      const audioToggle = document.getElementById('audioToggle');
+      const audioStatus = document.getElementById('audioStatus');
+      let playing = false;
+      audioToggle.addEventListener('click', () => {
+        if (!playing) { audio.play(); audioToggle.textContent = 'Pause'; audioStatus.textContent = 'Playing'; }
+        else { audio.pause(); audioToggle.textContent = 'Play'; audioStatus.textContent = 'Paused'; }
+        playing = !playing;
+      });
+      audio.addEventListener('ended', () => { playing = false; audioToggle.textContent = 'Play'; audioStatus.textContent = 'Paused'; });
+    </script>
+
+    		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+  </body>
+</html>

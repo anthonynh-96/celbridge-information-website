@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sign up — Celbridge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body class="page page--auth">
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav__brand" href="../index.html">Celbridge</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Create your account</h1>
+    <form id="signupForm" class="form">
+      <div class="form__row">
+        <label>Email</label>
+        <input class="input" type="email" name="email" required>
+      </div>
+      <div class="form__row">
+        <label>Display name (optional)</label>
+        <input class="input" name="displayName">
+      </div>
+      <div class="form__row">
+        <label>Password</label>
+        <input class="input" type="password" name="password" minlength="6" required>
+      </div>
+      <button class="btn btn--primary">Sign up</button>
+      <p class="muted">Have an account? <a href="../pages/login.html">Log in</a></p>
+      <p id="msg" class="form__msg" role="status"></p>
+    </form>
+  </main>
+
+  <script type="module">
+    async function api(path, opts = {}) {
+      const res = await fetch(path, {
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json', ...(opts.headers || {}) },
+        ...opts
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || 'Request failed');
+      return data;
+    }
+
+    const f = document.getElementById('signupForm');
+    const msg = document.getElementById('msg');
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.textContent = 'Creating account…';
+      const payload = Object.fromEntries(new FormData(f).entries());
+      try {
+        await api('../api/auth/signup', { method:'POST', body: JSON.stringify(payload) });
+        location.href = '../pages/blog.html';
+      } catch (err) {
+        msg.textContent = err.message;
+      }
+    });
+  </script>
+</body>
+</html>

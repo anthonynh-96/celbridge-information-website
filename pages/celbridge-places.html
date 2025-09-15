@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Celbridge • Live Map & Places</title>
+
+  <!-- Leaflet (no build tools needed) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+    defer
+  ></script>
+
+  <link rel="stylesheet" href="assets/css/celbridge-places.css" />
+  <script defer src="assets/js/celbridge-places.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="page-title">Celbridge — Live Map & Places</h1>
+    <p class="page-subtitle">Heritage, parks, and cafés pulled live from OpenStreetMap</p>
+  </header>
+
+  <main class="layout">
+    <section class="controls card">
+      <div class="control-row">
+        <label class="control-label">Category</label>
+        <div class="chip-group" role="tablist" aria-label="Place categories">
+          <button class="chip is-active" data-category="heritage" role="tab" aria-selected="true">Heritage</button>
+          <button class="chip" data-category="parks" role="tab" aria-selected="false">Parks & Green</button>
+          <button class="chip" data-category="cafes" role="tab" aria-selected="false">Cafés & Food</button>
+        </div>
+      </div>
+
+      <div class="control-row">
+        <label class="control-label" for="searchBox">Filter</label>
+        <input id="searchBox" class="input" type="search" placeholder="Type to filter by name…" />
+      </div>
+
+      <div class="control-row sm">
+        <button id="resetBtn" class="btn">Reset View</button>
+        <span id="status" class="status">Ready</span>
+      </div>
+    </section>
+
+    <section class="map-wrap card">
+      <div id="map" class="map"></div>
+    </section>
+
+    <aside class="list-wrap card">
+      <h2 class="list-title">Results</h2>
+      <ul id="placeList" class="place-list" aria-live="polite"></ul>
+      <div id="emptyState" class="empty" hidden>No places found. Try another category or widen your search.</div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <small>
+      Data © OpenStreetMap contributors • Rendered with Leaflet • No API key required.
+    </small>
+  </footer>
+</body>
+</html>
