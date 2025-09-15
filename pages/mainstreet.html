@@ -34,6 +34,17 @@
   <body class="is-preload">
     <div id="scrollProgress"></div>
 
+    <!-- Breadcrumbs -->
+<nav class="breadcrumbs">
+  <a href="../index.html">Index</a>
+  <span class="sep">›</span>
+  <a href="../pages/home.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../pages/Castletown.html">Castletown</a>
+  <span class="sep">›</span>
+  <span class="current">Main Street</span>
+</nav>
+
     <!-- Wrapper -->
     <div id="wrapper" class="divided">
       <!-- Hero -->
@@ -46,7 +57,6 @@
           </p>
           <ul class="actions stacked">
             <li><a href="#facts" class="button big wide smooth-scroll-middle">Quick facts</a></li>
-            <li><a href="../pages/home.html" class="button">← Back to Home</a></li>
           </ul>
         </div>
         <div class="image">
@@ -123,11 +133,11 @@
         </div>
       </section>
 
-      <!-- Explorer (filterable gallery) -->
+      <!-- Explorer -->
 					<section class="wrapper style1 align-center">
 						<div class="inner" div id="gallery">
-							<h2>Main Street Explorer</h2>
-          <p class="major">Filter by what you want to see — landmarks, shopfronts, streetscapes, or evening vibes.</p>
+							<h2>Gallery of Main Street</h2>
+          <p class="major">View the various sights of the main street. Landmarks, shopfronts, streetscapes, or evening vibes.</p>
 						</div>
 
 						<!-- Gallery: Celbridge Main Street -->
@@ -265,15 +275,16 @@
             <span id="audioStatus" aria-live="polite">Paused</span>
           </div>
           <audio id="streetAudio" preload="none">
-            <source src="audio/mainstreet.mp3" type="audio/mpeg" />
+            <source src="../assets/video-sound/paddys-day-main-street.mp4" type="audio/mpeg" />
           </audio>
 
           <ul class="actions stacked" style="margin-top:1rem;">
+            <li><a href="../pages/william-conolly.html" class="button smooth-scroll-middle">Proceed to next page</a></li>
             <li><a href="#wrapper" class="button smooth-scroll-middle">Back to top</a></li>
           </ul>
         </div>
         <div class="image">
-          <img src="../images/mainstreet/details.jpg" alt="Detail of stone and signage on Main Street" />
+          <img src="../images/Main street/paddys-day-celbridge.jpg" alt="Detail of stone and signage on Main Street" />
         </div>
       </section>
 
@@ -282,10 +293,6 @@
         <div class="inner">
           <p>&copy; Celbridge information site <a href="#">Anthony Norton Holohan</a>.</p>
           <ul class="actions stacked">
-            <li><a href="../pages/william-conolly.html" class="button">William Conolly</a></li>
-            <li><a href="../pages/castletown.html" class="button">Castletown House & Parklands</a></li>
-            <li><a href="../pages/home.html" class="button">Home</a></li>
-            <li><a href="#wrapper" class="button smooth-scroll-middle">Back to top</a></li>
           </ul>
         </div>
       </section>
@@ -376,5 +383,30 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+
+      <!-- Did You Know -->
+<div id="dyk-root"></div>
+<link rel="stylesheet" href="../assets/css/dyk.css">
+<script src="../assets/js/dyk.js"></script>
+
+<script>
+  dykWidget.init({
+    storageKey: 'dyk-mainstreet',
+    facts: [
+      'Celbridge Main Street once bustled with horse-drawn carts delivering to Breen’s Hotel.',
+      'Tea Lane Cemetery, just off the street, holds centuries of local history and graves.',
+      'The Mill on Main Street powered local industry, connecting Celbridge to Dublin markets.',
+      'Choy’s on Main Street was briefly used as an RIC barracks in the 19th century.',
+      'Gogarty’s, founded in 1883 by Matthew Gogarty, has the oldest shopfront in Celbridge.',
+      'The street’s Georgian and Victorian shopfronts blend historic facades with modern life.',
+      'Bridge House at the river end of Main Street was once a landmark for travelers.',
+      'Arthur Guinness’s first home stood just steps from the Main Street before Leixlip.',
+      'Main Street’s annual parades and fairs reflect a community tradition centuries old.',
+      'The Liffey Bridge at the foot of Main Street is the historic gateway into the town.'
+    ]
+  });
+</script>
+
+
   </body>
 </html>

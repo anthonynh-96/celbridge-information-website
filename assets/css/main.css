@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i");
 
 /*
-
+I started this website and stylesheet way back in April shortly after the course began and I've been iterating on it pretty much every week since.
+Because the site grew in scope, I kept retrofiting pieces as new features landed (flipbook, lightbox, forms, etc.).
+That's why it's quite long and has layers. I've tried to keep things tidy while not breaking stuff I'd already shipped.
 */
 
 html, body, div, span, applet, object,
@@ -22,6 +24,8 @@ section, summary, time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;}
+
+/* My global reset & base rules. This evens out browser quirks and sets up the default box-sizing and background—foundation stuﬀ I keep stable so later modules don't go wonky. Note: this was retrofited adjusted a few times as features changed. */
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -8599,3 +8603,51 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+
+		/* Breadcrumbs container */
+.breadcrumbs {
+  font-size: 0.95rem;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  max-width: 1200px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Logo size */
+.breadcrumbs .breadcrumb-logo {
+  height: 160px;       
+  width: auto;        
+  margin-right: 1rem; 
+  opacity: 0.95;
+}
+
+.breadcrumbs .breadcrumb-logo:hover {
+  opacity: 1;
+}
+
+
+/* Links */
+.breadcrumbs a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+  color: #47D3E5;
+}
+
+.breadcrumbs .sep {
+  margin: 0 0.3rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.breadcrumbs .current {
+  font-weight: 600;
+  color: #47D3E5;
+}
+
