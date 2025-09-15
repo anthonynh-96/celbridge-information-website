@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>William Conolly | Celbridge</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css"></noscript>
+    <style>
+      /* Floating Did You Know pill/card */
+      .dyk {
+        position: fixed; right: 1rem; bottom: 1rem; z-index: 10000;
+        display:flex; align-items:center; gap:.6rem;
+        border:1px solid rgba(0,0,0,.2); border-radius:999px; padding:.65rem 1rem;
+        background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.12);
+        max-width: min(28rem, 92vw);
+      }
+      .dyk .dot { width:.55rem; height:.55rem; border-radius:999px; background:#47D3E5; flex:0 0 auto; }
+      .dyk .msg { line-height:1.35; }
+      .dyk .actions { display:flex; gap:.25rem; margin-left:.25rem; }
+      .dyk button {
+        border:0; background:transparent; cursor:pointer; padding:.25rem .45rem; border-radius:6px;
+        font-size:1rem;
+      }
+      .dyk button:hover { background:rgba(0,0,0,.06); }
+      .dyk.is-pinned { border-color:#47D3E5; box-shadow:0 8px 24px rgba(71,211,229,.25); }
+
+      /* Minimized bubble */
+      .dyk-bubble {
+        position: fixed; right: 1rem; bottom: 1rem; z-index: 10001;
+        width: 3rem; height: 3rem; border-radius: 50%;
+        background:#47D3E5; color:#fff; font-size:1.5rem;
+        display:none; align-items:center; justify-content:center;
+        cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,.25);
+        transition: transform .2s ease;
+      }
+      .dyk-bubble:hover { transform: scale(1.1); }
+
+      @media (max-width: 736px) {
+        .dyk { left: .75rem; right: .75rem; border-radius:16px; }
+      }
+
+      /* === Legacy section enhancements === */
+      .timeline { max-width: 60rem; margin: 0 auto; text-align: left; }
+      .timeline summary {
+        cursor: pointer;
+        padding: .5rem .75rem;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: 6px;
+        margin: .35rem 0;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        transition: background .2s ease;
+      }
+      .timeline summary:hover { background: rgba(71,211,229,.08); }
+      .timeline summary .caret {
+        display: inline-block;
+        margin-right: .5rem;
+        transition: transform .2s ease;
+      }
+      .timeline details[open] summary .caret { transform: rotate(90deg); }
+      .timeline details p {
+        margin: .5rem 1.25rem;
+        font-size: .95rem;
+        opacity: .85;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="divided">
+
+      <!-- Hero -->
+      <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+        <div class="content">
+          <h1>William Conolly</h1>
+          <p class="major">
+            Statesman, landowner, and Speaker of the Irish House of Commons — the man behind Castletown House.
+            Conolly’s story intertwines politics, ambition, and the shaping of Celbridge in the early 18th century.
+          </p>
+          <ul class="actions stacked">
+            <li><a href="#facts" class="button big wide smooth-scroll-middle">Quick Facts</a></li>
+            <li><a href="../pages/home.html" class="button">← Back to Home</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="../images/Speaker_William_Conolly.jpg" alt="Portrait / depiction of William Conolly" />
+        </div>
+      </section>
+
+      <!-- Quick Facts -->
+      <section id="facts" class="wrapper style1 align-center">
+        <div class="inner">
+          <h2>Quick Facts</h2>
+          <p class="major">A snapshot before you dive in — watch the numbers tick up.</p>
+
+          <div class="row facts-grid gtr-50 aln-center onscroll-fade-in">
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="box">
+                <h3><span class="count-up" data-target="1662">0</span></h3>
+                <p><strong>Born</strong> (County Donegal)</p>
+              </div>
+            </div>
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="box">
+                <h3><span class="count-up" data-target="1729">0</span></h3>
+                <p><strong>Died</strong> (Castletown House, Celbridge, County Kildare)</p>
+              </div>
+            </div>
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="box">
+                <h3><span class="count-up" data-target="1728">0</span></h3>
+                <p><strong>Speaker</strong> of the Irish House of Commons</p>
+              </div>
+            </div>
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="box">
+                <h3>Constructed Castletown House</h3>
+                <p><strong>Palladian estate</strong> at the heart of Celbridge</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Early Life -->
+      <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+        <div class="content">
+          <h2>Early Life & Rise</h2>
+          <p>
+            William Conolly (1662–1729) rose from modest beginnings in Donegal to become a leading figure in Irish
+            public life. Trained in law, he prospered through astute land purchases after the Williamite wars and
+            entered parliament, where his influence steadily grew.
+          </p>
+          <p>
+            By the 1720s Conolly was one of the wealthiest men in Ireland, noted for pragmatic politics and a talent
+            for coalition building — traits that paved the way to the Speakership.
+          </p>
+        </div>
+        <div class="image">
+          <img src="../images/william-conolly-deed.jpg" alt="Documents and maps representing Conolly’s early career" />
+        </div>
+      </section>
+
+      <!-- Speakership -->
+      <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+        <div class="content">
+          <h2>Speaker & Power Broker</h2>
+          <p>
+            As Speaker of the Irish House of Commons (notably in the late 1720s), Conolly helped steer legislation
+            and budgetary matters at a pivotal moment in Ireland’s political development. He cultivated networks across
+            Dublin’s political and commercial worlds while maintaining extensive estates.
+          </p>
+          <p>
+            His stature wasn’t just political: philanthropy, patronage, and civic projects extended his influence far
+            beyond the chamber.
+          </p>
+        </div>
+        <div class="image">
+          <img src="../images/irish-house-of-commons.jpg" alt="Irish parliamentary interior / symbolic image of Speakership" />
+        </div>
+      </section>
+
+      <!-- Castletown Vision -->
+      <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+        <div class="content">
+          <h2>Castletown: A Statement in Stone</h2>
+          <p>
+            Conolly commissioned Castletown House at Celbridge as a modern, enlightened seat — a Palladian design that
+            signalled taste, learning, and confidence. The parklands and avenues were planned as much for public
+            enjoyment as for status, shaping Celbridge’s landscape to this day.
+          </p>
+          <p>
+            The house became a locus of social and cultural life, reflecting Conolly’s belief that architecture could
+            embody civic ideals.
+          </p>
+          <ul class="actions stacked">
+            <li><a href="castletown.html" class="button">Explore Castletown</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="../images/Castletown/Castletown-House-View-From-Garden.jpg" alt="Castletown House and parklands context image" />
+        </div>
+      </section>
+
+      <!-- Legacy (enhanced) -->
+      <section class="wrapper style1 align-center">
+        <div class="inner">
+          <h2>Legacy</h2>
+          <p class="major">
+            Conolly’s legacy endures in the fabric of Celbridge — its avenues, river walks, and the influence of
+            Castletown on Irish architectural taste.
+          </p>
+
+          <div class="timeline">
+            <details open>
+              <summary><span class="caret">▶</span> <strong>1662</strong> — Birth in Donegal</summary>
+              <p>Beginnings far from the political centre he would later inhabit.</p>
+            </details>
+            <details>
+              <summary><span class="caret">▶</span> <strong>1690s</strong> — Legal career & land acquisitions</summary>
+              <p>Post-war changes create opportunities Conolly seizes with precision.</p>
+            </details>
+            <details>
+              <summary><span class="caret">▶</span> <strong>1720s</strong> — Castletown House rises</summary>
+              <p>Palladian ideals realised on the Liffey at Celbridge.</p>
+            </details>
+            <details>
+              <summary><span class="caret">▶</span> <strong>1728</strong> — Speaker of the Commons</summary>
+              <p>Influence at its height; a power broker for reform and stability.</p>
+            </details>
+            <details>
+              <summary><span class="caret">▶</span> <strong>1729</strong> — Death & remembrance</summary>
+              <p>A legacy of architecture, estates, and civic vision.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section class="wrapper style1 align-center">
+        <div class="inner">
+            <p>&copy; Celbridge information site <a href="#">Anthony Norton Holohan</a>.</p>
+          <ul class="actions stacked">
+            <li><a href="../pages/arthur-guinness.html" class="button">Arthur Guinness</a></li>
+            <li><a href="../pages/mainstreet.html" class="button">Main Street</a></li>
+            <li><a href="../pages/castletown.html" class="button">Castletown House & Parklands</a></li>
+            <li><a href="../pages/home.html" class="button">Home</a></li>
+            <li><a href="#wrapper" class="button smooth-scroll-middle">Back to top</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Floating “Did you know?” pill -->
+    <div class="dyk" role="status" aria-live="polite" id="dyk">
+      <div class="dot" aria-hidden="true"></div>
+      <div class="msg" id="dykMsg">Did you know? Conolly commissioned Castletown as a Palladian showpiece.</div>
+      <div class="actions">
+        <button id="dykPrev" title="Previous fact">‹</button>
+        <button id="dykNext" title="Next fact">›</button>
+        <button id="dykPin"  title="Pin/unpin">📌</button>
+        <button id="dykClose" title="Close">✕</button>
+      </div>
+    </div>
+
+    <!-- Minimized bubble -->
+    <div class="dyk-bubble" id="dykBubble" title="Show facts">💡</div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Page-local enhancements -->
+    <script>
+      // Remove preload
+      window.addEventListener('load', () => {
+        setTimeout(() => document.body.classList.remove('is-preload'), 100);
+      });
+
+      // Count-up for Quick Facts
+      (function () {
+        const els = document.querySelectorAll('.count-up');
+        const animate = (el) => {
+          const target = parseInt(el.getAttribute('data-target'), 10);
+          const start = 0, duration = 1200, t0 = performance.now();
+          const step = (t) => {
+            const p = Math.min((t - t0) / duration, 1);
+            el.textContent = Math.floor(start + p * (target - start));
+            if (p < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        };
+        const io = new IntersectionObserver(es => {
+          es.forEach(e => { if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); } });
+        }, { threshold: 0.8 });
+        els.forEach(el => io.observe(el));
+      })();
+
+      // Scroll progress bar
+      (function () {
+        const bar = document.createElement('div');
+        bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;width:0;background:#47D3E5;z-index:9999;transition:width .1s linear;';
+        document.body.appendChild(bar);
+        const update = () => {
+          const h = document.documentElement;
+          bar.style.width = ((h.scrollTop)/(h.scrollHeight-h.clientHeight))*100 + '%';
+        };
+        document.addEventListener('scroll', update, { passive:true }); update();
+      })();
+
+      // “Did you know?” rotating facts + bubble collapse/restore
+      (function () {
+        const facts = [
+          'Conolly was one of the wealthiest men in Ireland by the 1720s.',
+          'He trained in law and prospered through post-Williamite land purchases.',
+          'Castletown House is considered Ireland’s first major Palladian mansion.',
+          'As Speaker, Conolly helped steer fiscal policy in the Irish House of Commons.',
+          'The avenues and parklands around Castletown reshaped Celbridge’s landscape.'
+        ];
+        let i = 0, pinned = false, timer = null;
+
+        const dyk = document.getElementById('dyk');
+        const msg = document.getElementById('dykMsg');
+        const prev = document.getElementById('dykPrev');
+        const next = document.getElementById('dykNext');
+        const pin  = document.getElementById('dykPin');
+        const close = document.getElementById('dykClose');
+        const bubble = document.getElementById('dykBubble');
+
+        const show = (idx) => { i = (idx + facts.length) % facts.length; msg.textContent = 'Did you know? ' + facts[i]; };
+        const start = () => { if (timer || pinned || dyk.style.display === 'none') return; timer = setInterval(() => show(i+1), 5000); };
+        const stop  = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+        prev.addEventListener('click', () => { show(i-1); });
+        next.addEventListener('click', () => { show(i+1); });
+        pin.addEventListener('click', () => {
+          pinned = !pinned; dyk.classList.toggle('is-pinned', pinned);
+          if (pinned) stop(); else start();
+        });
+
+        // Pause on hover/focus
+        dyk.addEventListener('mouseenter', stop);
+        dyk.addEventListener('mouseleave', start);
+        dyk.addEventListener('focusin', stop);
+        dyk.addEventListener('focusout', start);
+
+        // Close -> bubble
+        close.addEventListener('click', () => {
+          stop();
+          dyk.style.display = 'none';
+          bubble.style.display = 'flex';
+        });
+
+        // Bubble -> reopen pill and resume (if not pinned)
+        bubble.addEventListener('click', () => {
+          bubble.style.display = 'none';
+          dyk.style.display = 'flex';
+          start();
+        });
+
+        // Init
+        show(0); start(); 
+      })();
+    </script>
+  </body>
+</html>

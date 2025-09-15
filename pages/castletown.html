@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Castletown House & Parklands | Celbridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- Keep the same theme + typography as your Home page -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+    <!-- Page-local styles (minimal; respects your main theme) -->
+    <style>
+      /* Thin scroll progress bar at top */
+      #scrollProgress {
+        position: fixed; top: 0; left: 0; height: 4px; width: 0;
+        background: #47D3E5; z-index: 9999; transition: width 0.1s linear;
+      }
+
+      /* Quick Facts grid cards (light touch) */
+      .facts-grid .card {
+        border: 1px solid rgba(0,0,0,0.12);
+        border-radius: 8px; padding: 1.25rem;
+      }
+      .facts-grid .stat { font-size: 2rem; font-weight: 300; }
+
+      /* Timeline using <details> for progressive disclosure */
+      .timeline details { border-left: 4px solid rgba(0,0,0,0.2); padding: 0.75rem 1rem; margin-bottom: 1rem; }
+      .timeline summary { cursor: pointer; font-weight: 300; font-size: 1.15rem; }
+      .timeline details[open] { background: rgba(0,0,0,0.03); }
+
+      /* Filter chips */
+      .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+      .chip {
+        border: 1px solid rgba(0,0,0,0.2); border-radius: 999px; padding: 0.35rem 0.9rem;
+        cursor: pointer; user-select: none; font-size: 0.95rem;
+      }
+      .chip.active { background: #47D3E5; color: white; border-color: #47D3E5; }
+
+      /* Hide items when filtered */
+      .is-hidden { display: none !important; }
+
+      /* Small helper so onscroll-fade-in elements start inactive */
+      .onscroll-fade-in, .onscroll-image-fade-in { opacity: 0; transform: translateY(0.5rem); transition: opacity .6s ease, transform .6s ease; }
+      .onscroll-fade-in.is-active, .onscroll-image-fade-in.is-active { opacity: 1; transform: none; }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="scrollProgress"></div>
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="divided">
+      <!-- Hero -->
+      <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+        <div class="content">
+          <h1>Castletown House & Parklands</h1>
+          <p class="major">
+            Ireland’s landmark Palladian house and the green heart of Celbridge — a place where architecture,
+            river, and wildlife meet. Stroll the tree-lined avenues, trace the River Liffey, and step inside a house
+            that shaped taste and society in the 18th century.
+          </p>
+          <ul class="actions stacked">
+            <li><a href="#facts" class="button big wide smooth-scroll-middle">Explore the highlights</a></li>
+            <li><a href="../pages/home.html" class="button">← Back to Home</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <!-- Reuses your existing Castletown image path from the home theme -->
+          <img src="../images/ch.jpg" alt="Castletown House facade" />
+        </div>
+      </section>
+
+      <!-- Quick Facts -->
+      <section id="facts" class="wrapper style1 align-center">
+        <div class="inner">
+          <h2>Quick Facts</h2>
+          <p class="major">A snapshot before you dive in — watch the numbers tick up.</p>
+
+          <div class="row facts-grid gtr-50 aln-center onscroll-fade-in">
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="card">
+                <h3><span class="stat count-up" data-target="1722">0</span>–<span class="stat count-up" data-target="1729">0</span></h3>
+                <p><strong>Construction</strong> period</p>
+              </div>
+            </div>
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="card">
+                <h3 class="stat count-up" data-target="120">0</h3>
+                <p><strong>Acres+</strong> of parklands</p>
+              </div>
+            </div>
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="card">
+                <h3 class="stat">William Conolly</h3>
+                <p><strong>Patron</strong> & Speaker of the Irish House of Commons</p>
+              </div>
+            </div>
+            <div class="col-3 col-6-medium col-12-small">
+              <div class="card">
+                <h3 class="stat">Palladian</h3>
+                <p><strong>Architectural style</strong> that set a new standard</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story / Timeline -->
+      <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+        <div class="content">
+          <h2>The Castletown Story</h2>
+          <p>Open the milestones to skim the house’s journey from power-house to public treasure.</p>
+
+          <div class="timeline">
+            <details>
+              <summary><strong>Early 1700s</strong> — Vision & purchase</summary>
+              <p>William Conolly acquires estates at Celbridge and sets out to create a residence that reflects national ambition.</p>
+            </details>
+            <details>
+              <summary><strong>1722–1729</strong> — Building the house</summary>
+              <p>Castletown rises in a new Palladian idiom. The residence becomes a focal point for political, social, and cultural life.</p>
+            </details>
+            <details>
+              <summary><strong>18th–19th c.</strong> — Parklands shaped</summary>
+              <p>Avenues, water features, and woodland walks take form; the Liffey corridor frames views and leisure.</p>
+            </details>
+            <details>
+              <summary><strong>20th–21st c.</strong> — Conservation & access</summary>
+              <p>Restoration and stewardship open the house and grounds to the public, balancing heritage and habitat.</p>
+            </details>
+          </div>
+
+          <ul class="actions stacked">
+            <li><a href="#parklands" class="button smooth-scroll-middle">Explore the parklands</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="../images/ch_interior.jpg" alt="Castletown House interior hall (example)" />
+        </div>
+      </section>
+
+	<!-- Five -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Gallery of Castletown</h2>
+							<p>Discover the elegance of Castletown House and its parklands through this gallery of images, capturing the estate’s architecture, landscapes, and hidden features.</p>
+						</div>
+
+						<!-- Gallery: As its name suggests, a gallery of images of celbridge -->
+							<div class="gallery style2 medium lightbox onscroll-fade-in">
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/01.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/01.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Castletown House overhead</h3>
+										<p>An overhead shot of Castletown House. Notice the wings of the mansion. Circa 2008.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/02.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/02.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Close up of Castletown House</h3>
+										<p>A closer view of the Palladian Mansion. </p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/03.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/03.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>A view from the pond</h3>
+										<p>Castletown House in the distance with the Lower Pond in view.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/04.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/04.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Springtime Meadow</h3>
+										<p>A meadow in Castletown at Springtime.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/05.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/05.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Maintenance on a rainy day</h3>
+										<p>Maintenance works on the house on a rainy day.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/06.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/06.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>House Hedges</h3>
+										<p>Trimmed down hedges in front of Castletown House.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/07.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/07.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Stream by the Big House</h3>
+										<p>A small stream in front of Castletown House that leads to the Lower Pond, a short walk from the Big House.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/08.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/08.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Ice House</h3>
+										<p>18th-century ice house at Castletown, used to store ice and preserve food before refrigeration.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/09.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/09.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Lime Avenue, Castletown</h3>
+										<p>A grand tree-lined avenue of lime trees, designed to frame the approach to Castletown House.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="../images/gallery/fulls/castletown-gallery/10.jpg" class="image">
+										<img src="../images/gallery/thumbs/castletown-thumbs/10.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Footbridge in the Meadows</h3>
+										<p>A simple wooden footbridge crossing the meadows of Castletown’s parklands</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Open</span></li>
+										</ul>
+									</div>
+								</article>
+
+					</section>
+
+      <!-- Visitor info / CTA -->
+      <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+        <div class="content">
+          <h2>Tips for Your Visit</h2>
+          <ul>
+            <li>Wear comfortable shoes — paths range from gravel to grass.</li>
+            <li>Keep dogs on leads near grazing and wildlife areas.</li>
+            <li>Bring a camera: morning and golden hour are best for the Liffey views.</li>
+          </ul>
+          <ul class="actions stacked">
+            <li><a href="../pages/mainstreet.html" class="button">Main Street</a></li>
+            <li><a href="../pages/home.html" class="button">Home</a></li>
+            <li><a href="#wrapper" class="button smooth-scroll-middle">Back to top</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="images/parklands/map_placeholder.jpg" alt="Castletown parklands map (placeholder)" />
+        </div>
+      </section>
+
+      <!-- Footer-ish -->
+      <section class="wrapper style1 align-center">
+        <div class="inner">
+          <p>&copy; Celbridge inofmration site <a href="#">Anthony Norton Holohan</a>.</p>
+          <ul class="actions stacked">
+            <li><a href="../pages/mainstreet.html" class="button">Main Street</a></li>
+            <li><a href="../pages/home.html" class="button">Home</a></li>
+            <li><a href="#wrapper" class="button smooth-scroll-middle">Back to top</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Page JS -->
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => document.body.classList.remove('is-preload'), 100);
+      });
+
+      // Smooth scroll that centers target in viewport
+      document.querySelectorAll('a.smooth-scroll-middle').forEach(a => {
+        a.addEventListener('click', e => {
+          const href = a.getAttribute('href');
+          if (!href || !href.startsWith('#')) return;
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      });
+
+      // Scroll progress bar
+      const progressBar = document.getElementById('scrollProgress');
+      const updateProgress = () => {
+        const h = document.documentElement;
+        const pct = ((h.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100;
+        progressBar.style.width = pct + '%';
+      };
+      document.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      // On-scroll reveal for elements using the 'onscroll-*' classes
+      const revealTargets = document.querySelectorAll('.onscroll-fade-in, .onscroll-image-fade-in');
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('is-active');
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+      revealTargets.forEach(el => io.observe(el));
+
+      // Count-up animation for stats
+      const counters = document.querySelectorAll('.count-up');
+      const animateCount = (el) => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const start = 0;
+        const duration = 1200;
+        const t0 = performance.now();
+        const step = (t) => {
+          const p = Math.min((t - t0) / duration, 1);
+          el.textContent = Math.floor(start + p * (target - start));
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      const co = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); co.unobserve(e.target); } });
+      }, { threshold: 0.8 });
+      counters.forEach(c => co.observe(c));
+
+      // Filterable gallery chips
+      const chips = document.querySelectorAll('.chip');
+      const items = document.querySelectorAll('#parklandsGallery article');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const filter = chip.getAttribute('data-filter');
+          items.forEach(it => {
+            if (filter === '*' || it.getAttribute('data-tags').includes(filter)) {
+              it.classList.remove('is-hidden');
+            } else {
+              it.classList.add('is-hidden');
+            }
+          });
+        });
+      });
+    </script>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+      <!-- Did You Know -->
+<div id="dyk-root"></div>
+<link rel="stylesheet" href="../assets/css/dyk.css">
+<script src="../assets/js/dyk.js"></script>
+
+<script>
+  // Initialise the Did You Know widget for the Castletown page
+  dykWidget.init({
+    // A unique key so the widget's state (pinned/hidden/last fact shown)
+    storageKey: 'dyk-castletown',
+
+    // Array of facts that will rotate every 5 seconds (unless pinned).
+    // These are specific to Castletown House & its grounds.
+    facts: [
+      'Castletown House, begun in 1722, is considered Ireland’s first and finest Palladian mansion.',
+      'Its design by Alessandro Galilei and Edward Lovett Pearce influenced architecture across Ireland.',
+      'The Long Gallery inside Castletown runs the full width of the house, once hosting lavish gatherings.',
+      'The house was built for William Conolly, then Speaker of the Irish House of Commons.',
+      'Castletown’s parklands include the Lime Avenue, meadows, and the River Liffey walks.',
+      'An ice house hidden in the grounds was used to preserve food before refrigeration.',
+      'The “Batty Langley Gate” marks a dramatic entrance, styled in Gothic Revival taste.',
+      'Castletown once inspired comparisons to grand European palaces and even Leinster House.',
+      'Lady Louisa Conolly transformed the estate in the late 18th century with gardens and interiors.',
+      'Jonathan Swift, author of Gulliver’s Travels, once described Castletown as “the only palace in Ireland.”',
+      'Today Castletown is cared for by the OPW and welcomes thousands of visitors each year.'
+    ]
+  });
+</script>
+
+  </body>
+</html>

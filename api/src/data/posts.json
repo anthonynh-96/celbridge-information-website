@@ -1,0 +1,34 @@
+[
+  {
+    "id": "e490ac46-2543-4961-8994-84d71934bfdd",
+    "authorId": "4177cf05-75b0-45e8-94d1-a826f6f7355f",
+    "title": "Hello world ",
+    "body": "This is one cool blog post huh?",
+    "createdAt": "2025-09-11T19:48:34.575Z",
+    "updatedAt": "2025-09-11T19:48:34.575Z"
+  },
+  {
+    "id": "0151060e-0c66-4102-b4b5-ac54627f672c",
+    "authorId": "4177cf05-75b0-45e8-94d1-a826f6f7355f",
+    "title": "Love celbridge",
+    "body": "Great town",
+    "createdAt": "2025-09-11T20:13:22.448Z",
+    "updatedAt": "2025-09-11T20:13:22.448Z"
+  },
+  {
+    "id": "fae1f552-9f35-4a35-8470-78d72364b66e",
+    "authorId": "afa82d0e-c59a-4181-8b51-0b1ca394daa8",
+    "title": "Wow",
+    "body": "what a cool site",
+    "createdAt": "2025-09-11T20:14:21.891Z",
+    "updatedAt": "2025-09-11T20:14:21.891Z"
+  },
+  {
+    "id": "a800db68-8e1b-4025-9fd5-d4c79fefb7a5",
+    "authorId": "d48adc89-984c-4c63-9d46-f209953e0571",
+    "title": "Hello Hello Hello How low",
+    "body": "The lights on main street are out and its less dangerous actually somehow",
+    "createdAt": "2025-09-13T14:03:17.731Z",
+    "updatedAt": "2025-09-13T14:03:17.731Z"
+  }
+]

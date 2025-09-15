@@ -1,0 +1,33 @@
+/* Did You Know widget */
+.dyk {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 10000;
+  display: flex; align-items: center; gap: .6rem;
+  border: 1px solid rgba(0,0,0,.2); border-radius: 999px; padding: .65rem 1rem;
+  background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  max-width: min(28rem, 92vw);
+  font: inherit;
+}
+.dyk__dot { width: .55rem; height: .55rem; border-radius: 999px; background: #47D3E5; flex: 0 0 auto; }
+.dyk__msg { line-height: 1.35; }
+.dyk__actions { display: flex; gap: .25rem; margin-left: .25rem; }
+.dyk__btn {
+  border: 0; background: transparent; cursor: pointer; padding: .25rem .45rem; border-radius: 6px;
+  font-size: 1rem;
+}
+.dyk__btn:hover { background: rgba(0,0,0,.06); }
+.dyk--pinned { border-color: #47D3E5; box-shadow: 0 8px 24px rgba(71,211,229,.25); }
+
+/* Minimized bubble */
+.dyk-bubble {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 10001;
+  width: 3rem; height: 3rem; border-radius: 50%;
+  background: #47D3E5; color: #fff; font-size: 1.5rem;
+  display: none; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  transition: transform .2s ease;
+}
+.dyk-bubble:hover { transform: scale(1.1); }
+
+@media (max-width: 736px) {
+  .dyk { left: .75rem; right: .75rem; border-radius: 16px; }
+}
