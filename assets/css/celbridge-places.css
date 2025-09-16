@@ -1,10 +1,9 @@
 :root{
-  /* Tweak these to match your site */
   --bg: #ffffff;
   --card: #15161a;
   --muted: #8b90a0;
-  --text: #e7e9ee;
-  --accent: #8FD14F; /* swap to your brand accent */
+  --text: #000000;
+  --accent: #8FD14F;
   --accent-2: #3d7bfd;
   --border: #23252c;
 
@@ -49,9 +48,7 @@ body{
   box-shadow:var(--shadow);
 }
 
-.controls{
-  padding:1rem;
-}
+.controls{ padding:1rem; }
 .control-row{
   display:flex;
   align-items:center;
@@ -86,6 +83,10 @@ body{
 .chip:hover{transform:translateY(-1px); border-color:#2b2e36}
 .chip.is-active{background:var(--accent); border-color:transparent; color:#0b1306; font-weight:700}
 
+/* range (distance) */
+.range{ width:100%; accent-color: var(--accent); }
+
+/* Buttons */
 .btn{
   appearance:none;
   border:1px solid var(--border);

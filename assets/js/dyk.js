@@ -1,6 +1,4 @@
-/* Reusable Did You Know widget
- * Usage: dykWidget.init({ facts: [...], storageKey: 'dyk-home' });
- * No dependencies; safely namespaced.
+/*
  */
 const dykWidget = (() => {
   let state = {

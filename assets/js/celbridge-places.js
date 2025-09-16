@@ -1,4 +1,3 @@
-/* Celbridge Live Map & Places — resilient version */
 (() => {
   const CELBRIDGE = { lat: 53.339, lon: -6.536 };
   const RADIUS_METERS = 2200; // trimmed radius to reduce load

@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <title>Castletown House & Parklands | Celbridge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <!-- Keep the same theme + typography as your Home page -->
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
-    <!-- Page-local styles (minimal; respects your main theme) -->
     <style>
       /* Thin scroll progress bar at top */
       #scrollProgress {
@@ -23,7 +23,6 @@
       }
       .facts-grid .stat { font-size: 2rem; font-weight: 300; }
 
-      /* Timeline using <details> for progressive disclosure */
       .timeline details { border-left: 4px solid rgba(0,0,0,0.2); padding: 0.75rem 1rem; margin-bottom: 1rem; }
       .timeline summary { cursor: pointer; font-weight: 300; font-size: 1.15rem; }
       .timeline details[open] { background: rgba(0,0,0,0.03); }
@@ -39,7 +38,7 @@
       /* Hide items when filtered */
       .is-hidden { display: none !important; }
 
-      /* Small helper so onscroll-fade-in elements start inactive */
+      /* Small helper so onscroll-fade-in elements start */
       .onscroll-fade-in, .onscroll-image-fade-in { opacity: 0; transform: translateY(0.5rem); transition: opacity .6s ease, transform .6s ease; }
       .onscroll-fade-in.is-active, .onscroll-image-fade-in.is-active { opacity: 1; transform: none; }
     </style>
@@ -73,8 +72,7 @@
           </ul>
         </div>
         <div class="image">
-          <!-- Reuses your existing Castletown image path from the home theme -->
-          <img src="../images/ch.jpg" alt="Castletown House facade" />
+          <img src="../images/ch.jpg" alt="Castletown House facade" class="img-fluid rounded shadow"/>
         </div>
       </section>
 
@@ -143,7 +141,7 @@
           </ul>
         </div>
         <div class="image">
-          <img src="../images/ch_interior.jpg" alt="Castletown House interior hall (example)" />
+          <img src="../images/ch_interior.jpg" alt="Castletown House interior hall (example)" class="img-fluid rounded shadow"/>
         </div>
       </section>
 
@@ -158,7 +156,7 @@
 							<div class="gallery style2 medium lightbox onscroll-fade-in">
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/01.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/01.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/01.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>Castletown House overhead</h3>
@@ -170,7 +168,7 @@
 								</article>
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/02.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/02.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/02.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>Close up of Castletown House</h3>
@@ -182,7 +180,7 @@
 								</article>
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/03.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/03.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/03.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>A view from the pond</h3>
@@ -194,7 +192,7 @@
 								</article>
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/04.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/04.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/04.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>Springtime Meadow</h3>
@@ -206,7 +204,7 @@
 								</article>
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/05.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/05.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/05.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>Maintenance on a rainy day</h3>
@@ -218,7 +216,7 @@
 								</article>
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/06.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/06.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/06.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>House Hedges</h3>
@@ -230,7 +228,7 @@
 								</article>
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/07.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/07.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/07.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>Stream by the Big House</h3>
@@ -242,7 +240,7 @@
 								</article>
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/08.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/08.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/08.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>Ice House</h3>
@@ -254,7 +252,7 @@
 								</article>
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/09.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/09.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/09.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>Lime Avenue, Castletown</h3>
@@ -266,7 +264,7 @@
 								</article>
 								<article>
 									<a href="../images/gallery/fulls/castletown-gallery/10.jpg" class="image">
-										<img src="../images/gallery/thumbs/castletown-thumbs/10.jpg" alt="" />
+										<img src="../images/gallery/thumbs/castletown-thumbs/10.jpg" alt="" class="img-fluid rounded shadow"/>
 									</a>
 									<div class="caption">
 										<h3>Footbridge in the Meadows</h3>
@@ -294,7 +292,7 @@
           </ul>
         </div>
         <div class="image">
-          <img src="../images/castletown-illustrative-map.png" alt="Castletown parklands map (placeholder)" />
+          <img src="../images/castletown-illustrative-map.png" alt="Castletown parklands map (placeholder)" class="img-fluid rounded shadow"/>
         </div>
       </section>
 
@@ -314,7 +312,7 @@
         setTimeout(() => document.body.classList.remove('is-preload'), 100);
       });
 
-      // Smooth scroll that centers target in viewport
+      // Smooth scroll 
       document.querySelectorAll('a.smooth-scroll-middle').forEach(a => {
         a.addEventListener('click', e => {
           const href = a.getAttribute('href');
@@ -335,7 +333,7 @@
       document.addEventListener('scroll', updateProgress, { passive: true });
       updateProgress();
 
-      // On-scroll reveal for elements using the 'onscroll-*' classes
+      // On-scroll reveal for elements
       const revealTargets = document.querySelectorAll('.onscroll-fade-in, .onscroll-image-fade-in');
       const io = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -399,10 +397,9 @@
 <script>
   // Initialise the Did You Know widget for the Castletown page
   dykWidget.init({
-    // A unique key so the widget's state (pinned/hidden/last fact shown)
     storageKey: 'dyk-castletown',
 
-    // Array of facts that will rotate every 5 seconds (unless pinned).
+    // Array of facts that will rotate every 5 seconds .
     // These are specific to Castletown House & its grounds.
     facts: [
       'Castletown House, begun in 1722, is considered Ireland’s first and finest Palladian mansion.',
@@ -420,5 +417,6 @@
   });
 </script>
 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
